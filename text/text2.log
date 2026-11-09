@@ -1,56 +1,44 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.02-251130-2.6 (utf8.sjis) (TeX Live 2026) (preloaded format=platex 2026.10.31)  9 NOV 2026 08:42
+This is e-pTeX, Version 3.14159265-p3.8.0-180226-2.6 (sjis) (TeX Live 2018/W32TeX) (preloaded format=platex 2018.3.9)  9 NOV 2026 14:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**text2.tex
-(./text2.tex
-pLaTeX2e <2023-02-14>+1, based on
-LaTeX2e <2026-06-01>
-L3 programming layer <2026-09-09>
-(c:/texlive/2026/texmf-dist/tex/platex/base/jarticle.cls
-Document Class: jarticle 2020/09/30 v1.8f Standard pLaTeX class
-\c@@paper=\count276
-(c:/texlive/2026/texmf-dist/tex/platex/base/jsize10.clo
-File: jsize10.clo 2020/09/30 v1.8f Standard pLaTeX file (size option)
+**d:/GIT/easyspinning/easyspinning/text/text2.tex
+(d:/GIT/easyspinning/easyspinning/text/text2.tex
+pLaTeX2e <2018/03/09> (based on LaTeX2e <2017-04-15>)
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(c:/w32tex/share/texmf-dist/tex/platex/base/jarticle.cls
+Document Class: jarticle 2018/02/04 v1.7h Standard pLaTeX class
+\c@@paper=\count82
+(c:/w32tex/share/texmf-dist/tex/platex/base/jsize10.clo
+File: jsize10.clo 2018/02/04 v1.7h Standard pLaTeX file (size option)
 )
-\c@part=\count277
-\c@section=\count278
-\c@subsection=\count279
-\c@subsubsection=\count280
-\c@paragraph=\count281
-\c@subparagraph=\count282
-\c@figure=\count283
-\c@table=\count284
-\abovecaptionskip=\skip49
-\belowcaptionskip=\skip50
+\c@part=\count83
+\c@section=\count84
+\c@subsection=\count85
+\c@subsubsection=\count86
+\c@paragraph=\count87
+\c@subparagraph=\count88
+\c@figure=\count89
+\c@table=\count90
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
 \symmincho=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
-(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 615.
-\toclineskip=\dimen166
-\@lnumwidth=\dimen167
-\bibindent=\dimen168
-\heisei=\count285
-)
-(c:/texlive/2026/texmf-dist/tex/latex/l3kernel/l3backend-dvips.def
-File: l3backend-dvips.def 2026-09-09 L3 backend support: dvips
-\l__pdfannot_backend_content_box=\box70
-\l__pdfannot_backend_model_box=\box71
-\g__pdfannot_backend_int=\count286
-\g__pdfannot_backend_link_int=\count287
-\g__pdfannot_backend_link_sf_int=\count288
-)
-(./text2.aux)
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 614.
+\toclineskip=\dimen118
+\@lnumwidth=\dimen119
+\bibindent=\dimen120
+\heisei=\count91
+) (./text2.aux)
 \openout1 = `text2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -85,20 +73,21 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 92.
- [3] (./text2.aux)
- ***********
-pLaTeX2e <2023-02-14>+1, based on
-LaTeX2e <2026-06-01>
-L3 programming layer <2026-09-09>
- ***********
- ) 
-Here is how much of TeX's memory you used:
- 557 strings out of 467699
- 10006 string characters out of 5425326
- 440246 words of memory out of 5000000
- 30013 multiletter control sequences out of 15000+600000
- 638887 words of font info for 80 fonts, out of 8000000 for 9000
- 929 hyphenation exceptions out of 8191
- 35i,6n,38p,158b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 111.
 
-Output written on text2.dvi (3 pages, 8068 bytes).
+ (c:/w32tex/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
+ [3] (./text2.aux) ) 
+Here is how much of TeX's memory you used:
+ 319 strings out of 493611
+ 3581 string characters out of 6149885
+ 63030 words of memory out of 5000000
+ 4000 multiletter control sequences out of 15000+600000
+ 13703 words of font info for 53 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 22i,6n,20p,179b,237s stack positions out of 5000i,500n,10000p,500000b,80000s
+
+Output written on text2.dvi (3 pages, 8128 bytes).

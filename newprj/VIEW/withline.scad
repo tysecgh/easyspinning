@@ -1,7 +1,5 @@
 include <../main.scad>
 
-$time = 0;
+$time = 4;
 
-translate([0,0,-52])
-rotate([0,-90,0])
 VIEW_WITHLINE($time);

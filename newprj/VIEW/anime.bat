@@ -3,9 +3,9 @@ setlocal enabledelayedexpansion
 
 :: --- 設定項目 ---
 set OPENSCAD_PATH="C:\Program Files (x86)\OpenSCAD\openscad"
-set SCAD_FILE=withline2.scad
+set SCAD_FILE=withline.scad
 set OUTPUT_DIR=frames
-set TOTAL_STEPS=72
+set TOTAL_STEPS=24
 set CAMERA=25,70,35,75,0,160,125
 :: ----------------
 
@@ -42,7 +42,7 @@ for /L %%i in (0, 1, %TOTAL_STEPS%) do (
     set /a "idx=%%i+1"
     
     :: 【1】バッチ側で先に計算を行う（例: 0*10, 1*10, 2*10 ...）
-    set /a "calc_val=%%i * 10"
+    set /a "calc_val=%%i *15"
     
     :: 4桁のゼロ埋めファイル名を作成
     if %%i LSS 10 (

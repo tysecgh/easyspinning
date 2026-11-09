@@ -16,6 +16,7 @@ module PART_A1(){
     }
 }
 
+
 module PART_A2(){
     difference(){
         cylinder(r=20,h=6,$fn=64);
@@ -30,11 +31,12 @@ module PART_A3(){
         linear_extrude(6)
         polygon([
             [-9,0],[-9,5],[0,5],[0,11],
-            [-9,11],[-9,29],[9,29],[9,18],
-            [0,18],[0,17],[9,17],[9,0]
+            [-9,11],[-9,sp_width+23],[9,sp_width+23],
+            [9,sp_width+12],
+            [0,sp_width+12],[0,sp_width+11],[9,sp_width+11],[9,0]
         ]);
 
-        translate([0,20,0])
+        translate([0,sp_width+15,0])
         hole(3,6);
     }
 }
@@ -50,14 +52,14 @@ module ASSY_A(){
     crown_pins(17,6,30);
 }
 
-module ASSY_AX(){
-    translate([0,0,24]){
-        translate([-23,0,-5])
-        rotate([90,0,-90])
-        PART_A3();
+sp_width = 12;
 
-        PART_A1();
-    }
+module ASSY_AX(){
+    translate([-23,0,-5])
+    rotate([90,0,-90])
+    PART_A3();
+
+    PART_A1();
 }
 
 module PART_B1(){
@@ -165,9 +167,9 @@ module PART_D1(){
 
 module PART_D2(){
     difference(){
-        cylinder(r=15,h=6,$fn=64);
+        cylinder(r=15,h=sp_width+1,$fn=64);
 
-        hole(3,6);
+        hole(3,sp_width+1);
     }
 }
 
@@ -180,7 +182,7 @@ module PART_D3(){
 }
 
 module ASSY_D(){
-    translate([0,0,12]) PART_D1();
+    translate([0,0,sp_width+1+6]) PART_D1();
     translate([0,0,6]) PART_D2();
     PART_D3();
     
@@ -189,7 +191,7 @@ module ASSY_D(){
 }
 
 module ASSY_DX(){
-    translate([0,0,12]) PART_D1();
+    translate([0,0,sp_width+1+6]) PART_D1();
     translate([0,0,6]) PART_D2();
     PART_D3();
 }
@@ -208,17 +210,10 @@ module VIEWX_B(theta=0){
 module VIEWX_D(){
     translate([52,0,-2])rotate([0,90,0])ASSY_D();
 }
-module VIEWX_DX(){
-    translate([52,0,-2])rotate([0,90,0])ASSY_DX();
-}
+
 module VIEWX_A(theta=0){ 
     translate([22,0,-2])rotate([0,90,0])
         rotate([0,0,theta])ASSY_A();
-}
-
-module VIEWX_AX(theta=0){ 
-    translate([22,0,-2])rotate([0,90,0])
-        rotate([0,0,theta])ASSY_AX();
 }
 
 
@@ -252,29 +247,66 @@ module line(pSq){
     color("red"){
         for( i=[0:1:len(pSq)-2] ){
             beam(pSq[i], pSq[i+1],0.3);
-        }
-        
-        translate([0,0,9-0.3])
-        cylinder(r=15.1,h=0.6,$fn=64);
+        }        
     }
+}
+
+module VIEWX_AX(theta=0){ 
+    rotate([0,0,theta])
+    ASSY_AX();
+}
+module VIEWX_DX(theta=0,h=0){
+    translate([0,0,6+h]) 
+    rotate([0,0,theta])
+    ASSY_DX();
 }
 
 
 module VIEW_WITHLINE(t=0){
     VIEWX_AX(t);
-    VIEWX_DX();
+    VIEWX_DX(h=6);
     VIEWX_line(t);
 }
 
-module VIEWX_line(theta=0){
-    translate([52,0,-2])rotate([0,90,0])
-    rotate([0,0,theta])
-    line([[-9,12,9],[-23,0,9],[-30,0,9],[-30,0,19],[-0,0,200]]);
+module VIEW_WITHOC(t=0){
+    if( t< 18 ){
+        VIEWX_DX(h=6+t*6/18);
+    }else if( t<54 ){
+        VIEWX_DX(h=12-(t-18)*12/36);
+    }else{
+        VIEWX_DX(h=0+(t-54)*6/18);
+    }
+    VIEWX_AX(t*15);
+    VIEWX_line(t*15);
 }
+
+module VIEW_WITHCO(t=0){
+    if( t< 18 ){
+        translate([0,0,-(6+t*6/18)]) VIEW_WITHOC(t);
+    }else if( t<54 ){
+        translate([0,0,-(12-(t-18)*12/36)]) VIEW_WITHOC(t);
+    }else{
+        translate([0,0,-(0+(t-54)*6/18)]) VIEW_WITHOC(t);
+    }
+}
+
+
+
+module VIEWX_line(theta=0,h=0){
+    z = 12+sp_width+h;
+    rotate([0,0,theta])
+    line([[-9,12,z],[-23,0,z],[-30,0,z],[-30,0,z+10],[-0,0,200]]);
+    
+    color("red")
+    translate([0,0,z-0.3])
+    cylinder(r=15.1,h=0.6,$fn=64);
+}
+
+
 
 module VIEW_WITHLINE2(t=0){
     VIEWX_AX();
-    VIEWX_DX();
+    translate([0,0,6]) VIEWX_DX();
     VIEWX_line2(-t);
 }
 
@@ -284,7 +316,7 @@ module VIEWX_line2(theta=0){
     line([[-9,12,9],[-21,0,12],[-21,-3,19],[-0,0,200]]);
 }
 
-VIEW_WITHLINE2();
+//VIEW_WITHLINE();
 
 //VIEW_WITHLINE();
 
